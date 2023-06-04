@@ -1,4 +1,4 @@
-import "./App.css";
+import "./style/App.css";
 import {getMovieList, searchMovie} from './api'
 import { useEffect, useState } from "react";
 
