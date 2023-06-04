@@ -1,58 +1,43 @@
-import "./style/App.css";
-import {getMovieList, searchMovie} from './api'
-import { useEffect, useState } from "react";
+import "./style/style.css";
+import MyPict from "./assets/profile/myPict.png";
 
 const App = () => {
-  const [popularMovies, setPopularMovies] = useState([])
-
-  useEffect(() => {
-    getMovieList().then((result) => {
-      setPopularMovies(result)
-    })
-  }, [])
-
-  const PopularMovieList = () => {
-    return popularMovies.map((movie, i) => {
-      return (
-        <div className="movie-wrapper" key={i}>
-          <div className="movie-title">{movie.title}</div>
-          <img 
-          className="movie-img" 
-          src={`${process.env.REACT_APP_BASEIMGURL}/${movie.poster_path}`} 
-          />
-          <div className="movie-date">release: {movie.release_date}</div>
-          <div className="movie-rate">{movie.vote_average}</div>
-        </div>
-      )
-    })
-  }
-
-  const search = async(q) => {
-    if(q.length > 3) {
-      const query = await searchMovie(q)
-      setPopularMovies(query.results)
-    }
-  }
-
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <h1>CINEMA</h1>
-        <input 
-        placeholder="cari film..." 
-        className="movie-search"
-        onChange={({target}) => search(target.value)} 
-        />
-        <div className="movie-container">
-          <PopularMovieList />
+    <div className="App">
+      <header className="App-header">
+        <div className="nav">
+          <nav>
+            <div className="wrapper">
+              <div className="logo">
+                <a href="/">
+                  <p>CINEMA</p>
+                </a>
+              </div>
+              <div className="menu">
+                <ul>
+                  <li>
+                    <a href="#">GENRE</a>
+                  </li>
+                  <li>
+                    <a href="#">POPULAR</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="search">
+                <input type="text" placeholder="Search..." id="search_input" />
+              </div>
+              <div className="img_profile">
+                <a href="#">
+                  <img src={MyPict} alt="" />
+                </a>
+              </div>
+            </div>
+          </nav>
         </div>
+        <div className="content"></div>
       </header>
-      
-      <footer className='App-footer'>
-        &copy;2023. <b>Arief Budiman</b>
-      </footer>
     </div>
-  )
-}
+  );
+};
 
 export default App;
