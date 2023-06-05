@@ -38,6 +38,10 @@ const App = () => {
     <div className='App'>
       <header className='App-header'>
         <h1>CINEMA</h1>
+        {/* NavBar */}
+        <div className="nav">
+          <NavBar />
+        </div>
         <input 
         placeholder="cari film..." 
         className="movie-search"
