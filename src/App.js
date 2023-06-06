@@ -1,7 +1,9 @@
 import "./style/App.css";
 import { getMovieList, searchMovie } from "./api";
 import { useEffect, useState } from "react";
+import ListPopularMovie from "./components/popularMovieList";
 import NavBar from "./components/navBar";
+import Search from "./search";
 
 const App = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -15,25 +17,11 @@ const App = () => {
   const PopularMovieList = () => {
     return popularMovies.map((movie, i) => {
       return (
-        <div className="movie-wrapper" key={i}>
-          <div className="movie-title">{movie.title}</div>
-          <img
-            className="movie-img"
-            src={`${process.env.REACT_APP_BASEIMGURL}/${movie.poster_path}`}
-          />
-          <div className="movie-date">release: {movie.release_date}</div>
-          <div className="movie-rate">{movie.vote_average}</div>
-        </div>
+        <ListPopularMovie type={movie} ky={i} />
       );
     });
   };
 
-  const search = async (q) => {
-    if (q.length > 3) {
-      const query = await searchMovie(q);
-      setPopularMovies(query.results);
-    }
-  };
 
   return (
     <div className="App">
@@ -48,7 +36,7 @@ const App = () => {
         onChange={({target}) => search(target.value)} 
         /> */}
         <div className="type">
-          <h1>POPULAR</h1>
+          <h1 id="popular">POPULAR</h1>
           <h3>see all</h3>
         </div>
         <div className="movie-container">
