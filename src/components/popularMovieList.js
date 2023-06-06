@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import Search from "../search";
-import { popularMovies, setPopularMovies } from "../hook";
-import { getMovieList } from "../api";
+// import { useEffect } from "react";
+// import Search from "../search";
+// import { popularMovies, setPopularMovies } from "../hook";
+// import { getMovieList } from "../api";
 
 const ListPopularMovie = (props) => {
   return (

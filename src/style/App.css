@@ -1,4 +1,5 @@
 * {
+  /* border: 1px solid black; */
   text-decoration: none;
   margin: 0px;
   padding: 0px;
@@ -24,21 +25,25 @@
   color: #61dafb;
 }
 
-.nav {
+.navigate {
   width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   position: sticky; /* ketika discroll tetap di atas */
   top: 0;
   z-index: 1;
+  border: 1px solid black;
 }
 
-.nav nav {
-  margin-top: 20px;
-  padding: 10px 0px;
+.nav {
+  width: 100%;
   display: flex; /* membuat seperti kolom */
   align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px 0px;
   width: 70%;
   height: 50px;
   border-radius: 30px;
@@ -47,6 +52,7 @@
 }
 
 .nav-wrapper {
+  border: 1px solid black;
   width: 1100px;
   margin: 40px;
   position: relative;
@@ -55,7 +61,14 @@
   justify-content: space-between;
   text-decoration: none;
 }
-
+.search {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  margin-right: 20px;
+}
 .logo {
   display: flex;
   text-align: center;
@@ -74,13 +87,13 @@
   float: right;
 }
 
-nav ul {
+.nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-nav ul li {
+.nav ul li {
   float: left;
   margin: 0px 10px;
   font-size: 25px;
@@ -88,12 +101,12 @@ nav ul li {
   letter-spacing: 1px;
 }
 
-nav ul li a {
+.nav ul li a {
   color: white;
   transition: 0.3s linear;
 }
 
-nav ul li a:hover {
+.nav ul li a:hover {
   color: rgb(160, 67, 189);
 }
 

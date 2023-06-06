@@ -3,7 +3,7 @@ import { getMovieList, searchMovie } from "./api";
 import { useEffect, useState } from "react";
 import ListPopularMovie from "./components/popularMovieList";
 import NavBar from "./components/navBar";
-import Search from "./search";
+// import Search from "./search";
 
 const App = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -16,19 +16,29 @@ const App = () => {
 
   const PopularMovieList = () => {
     return popularMovies.map((movie, i) => {
-      return (
-        <ListPopularMovie type={movie} ky={i} />
-      );
+      return <ListPopularMovie type={movie} key={i} />;
     });
   };
 
+  const Search = async (q) => {
+    if (q.length > 3) {
+      const query = await searchMovie(q);
+      setPopularMovies(query.result);
+    }
+  };
 
   return (
     <div className="App">
       <header className="App-header">
         {/* NavBar */}
-        <div className="nav">
-          <NavBar />
+        <div className="navigate">
+          <div className="nav">
+            <NavBar />
+            <div className="search">
+              <input type="text" placeholder="Search..." id="search_input"
+              onChange={({target}) => Search(target.value)} />
+            </div>
+          </div>
         </div>
         {/* <input 
         placeholder="cari film..." 
