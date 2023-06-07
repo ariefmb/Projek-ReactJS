@@ -1,31 +1,15 @@
 import "./style/App.css";
 import { getMovieList, searchMovie } from "./api";
-import { useEffect, useState } from "react";
-import ListPopularMovie from "./components/popularMovieList";
+import React, { useState, useEffect } from "react";
 import NavBar from "./components/navBar";
-// import Search from "./search";
+import PopularMovieList from "./components/popularMovieList";
 
 const App = () => {
-  const [popularMovies, setPopularMovies] = useState([]);
+  const [searchValue, setSearchValue] = useState([]);
 
-  useEffect(() => {
-    getMovieList().then((result) => {
-      setPopularMovies(result);
-    });
-  }, []);
-
-  const PopularMovieList = () => {
-    return popularMovies.map((movie, i) => {
-      return <ListPopularMovie type={movie} key={i} />;
-    });
-  };
-
-  const Search = async (q) => {
-    if (q.length > 3) {
-      const query = await searchMovie(q);
-      setPopularMovies(query.result);
-    }
-  };
+  const handleInputChange = (value) => {
+    setSearchValue(value)
+  }
 
   return (
     <div className="App">
@@ -33,11 +17,7 @@ const App = () => {
         {/* NavBar */}
         <div className="navigate">
           <div className="nav">
-            <NavBar />
-            <div className="search">
-              <input type="text" placeholder="Search..." id="search_input"
-              onChange={({target}) => Search(target.value)} />
-            </div>
+            <NavBar onInputChange={handleInputChange}/>
           </div>
         </div>
         {/* <input 
@@ -50,7 +30,7 @@ const App = () => {
           <h3>see all</h3>
         </div>
         <div className="movie-container">
-          <PopularMovieList />
+          <PopularMovieList searchValue={searchValue}/>
         </div>
       </header>
 

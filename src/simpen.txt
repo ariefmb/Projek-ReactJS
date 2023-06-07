@@ -60,3 +60,53 @@ const App = () => {
 }
 
 export default App;
+
+=============================
+
+import React, { useState, useEffect } from "react";
+import { getMovieList } from "../api";
+
+const PopularMovieList = ({ searchValue }) => {
+  const [popularMovies, setPopularMovies] = useState([]);
+
+  // useEffect(() => {
+  //   getMovieList().then((result) => {
+  //     setPopularMovies(result);
+  //   });
+  // }, [searchValue]);
+  const apiKey = process.env.REACT_APP_APIKEY;
+  const baseUrl = process.env.REACT_APP_BASEURL;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `${baseUrl}/movie/popular?page=1&api_key=${apiKey}`
+        );
+        const data = await response.json();
+        setPopularMovies(data);
+      } catch (error) {
+        console.log(`Error fetching data: ${error}`);
+      }
+    };
+    fetchData();
+  }, [searchValue]);
+
+  return (
+    <div>
+      {popularMovies.map((movie, i) => {
+        <div className="movie-wrapper" key={i}>
+          <div className="movie-title">{movie.title}</div>
+          <img
+            className="movie-img"
+            src={`${process.env.REACT_APP_BASEIMGURL}/${movie.poster_path}`}
+          />
+          <div className="movie-date">release: {movie.release_date}</div>
+          <div className="movie-rate">{movie.vote_average}</div>
+        </div>;
+      })}
+    </div>
+  );
+};
+
+export default PopularMovieList;
