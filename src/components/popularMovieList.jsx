@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getMovieList } from "../api";
 
 const PopularMovieList = ({ searchValue }) => {
-  const [popularMovies, setPopularMovies] = useState([]);
+  const [searchValue, setPopularMovies] = useState([]);
 
   useEffect(() => {
     getMovieList().then((result) => {
@@ -11,7 +11,7 @@ const PopularMovieList = ({ searchValue }) => {
   }, [searchValue]);
 
   const ListPopularMovie = () => {
-    return popularMovies.map((movie, i) => {
+    return searchValue.map((movie, i) => {
       return (
         <div className="movie-wrapper" key={i}>
           <div className="movie-title">{movie.title}</div>
