@@ -1,5 +1,6 @@
 * {
   /* border: 1px solid black; */
+  font-family: 'comic sans ms';
   text-decoration: none;
   list-style-type: none;
   margin: 0px;
@@ -141,14 +142,17 @@
 }
 
 .type {
+  border: 1px black solid;
   width: 70%;
-  margin-top: 40px;
+  height: 100px;
+  bottom: 20px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
 }
 
 .type h1 {
+  border: 1px black solid;
   cursor: default;
 }
 
@@ -169,7 +173,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 5px;
   cursor: default;
 }
 
@@ -177,41 +181,50 @@
   border-radius: 15px;
   height: 350px;
   width: 200px;
-  margin: 0px 10px;
-  background-color: rgb(169, 231, 228);
   color: black;
+  background-size: cover;
+  background-position: center;
+}
+
+.movie-wrapper:hover{
+  z-index: 0;
+  height: 385px;
+  width: 230px;
+  transition: 0.3s;
+}
+
+.movie-content {
+  border-radius: 15px;
+  height: 29%;
+  width: auto;
+  color: white;
+  padding-top: 250px;
+  padding-left: 20px;
+  bottom: 0;
+  background: linear-gradient(transparent, black);
+  text-align: left;
 }
 
 .movie-title {
-  font-size: 65%;
-  height: 30px;
-  margin: 10px 0px;
+  position: relative;
+  font-size: 70%;
   font-weight: bold;
-  width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
 }
 
-.movie-img {
+/* .movie-img {
   height: 70%;
-}
+} */
 
 .movie-date {
   font-size: 60%;
-  margin-top: 7px;
   font-style: italic;
 }
 
 .movie-rate {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  margin-left: 35px;
   width: 50%;
   font-size: 60%;
   color: red;
-  margin-bottom: 15px;
   font-weight: bold;
   text-decoration: underline;
 }
