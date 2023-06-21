@@ -5,6 +5,7 @@
   list-style-type: none;
   margin: 0px;
   padding: 0px;
+  scroll-behavior: smooth;
 }
 
 .App {
@@ -13,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #1c5064;
+  background: linear-gradient(45deg, #381a4d, rgb(25, 69, 88));
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -21,10 +22,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 .navigate {
@@ -40,7 +37,7 @@
 
 .nav-wrapper {
   border-radius: 30px;
-  background-color: rgb(94, 170, 175);
+  background: linear-gradient(90deg, rgb(94, 170, 175), white);
   width: 70%;
   margin: 20px;
   padding: 0px 20px;
@@ -60,13 +57,14 @@
 .logo {
   text-align: center;
   justify-content: center;
+  padding-left: 10px;
   padding-bottom: 3px;
 }
 
 .logo a {
   font-size: 40px;
   font-weight: bold;
-  color: white;
+  color: #1f1f1f;
 }
 
 .menu {
@@ -81,13 +79,13 @@
 .menu ul li {
   margin: 0px 10px;
   font-size: 25px;
-  font-weight: bold;
+  font-weight: bolder;
   letter-spacing: 1px;
 }
 
 .menu ul li a {
   text-decoration: none;
-  color: white;
+  color: #1f1f1f;
   transition: 0.3s linear;
 }
 
@@ -127,7 +125,7 @@
 .img_profile a img {
   display: flex;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 3px solid #1f1f1f;
   width: 45px;
   height: auto;
 }
@@ -142,27 +140,19 @@
 }
 
 .type {
-  border: 1px black solid;
+  position: fix;
   width: 70%;
   height: 100px;
   bottom: 20px;
+  margin-bottom: 1px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .type h1 {
-  border: 1px black solid;
+  padding: 80px 0px;
   cursor: default;
-}
-
-.type h3 {
-  cursor: pointer;
-  font-size: 20px;
-}
-
-.type h3:hover {
-  text-decoration: underline;
 }
 
 .movie-container {
@@ -205,13 +195,21 @@
   text-align: left;
 }
 
+.movie-content:hover{
+  z-index: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  height: 135px;
+  width: 210px;
+}
+
 .movie-title {
   position: relative;
   font-size: 70%;
   font-weight: bold;
   width: 100%;
 }
-
 /* .movie-img {
   height: 70%;
 } */

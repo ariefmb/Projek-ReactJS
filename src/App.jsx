@@ -1,7 +1,7 @@
 import "./style/App.css";
 import { getMovieList, searchMovie } from "./api";
 import React, { useState } from "react";
-// import NavBar from "./components/navBar";
+import { useRef } from "react";
 import PopularMovieList from "./components/popularMovieList";
 import MyPict from "./assets/profile/myPict.png";
 
@@ -15,8 +15,8 @@ const App = () => {
   const handleInputChange = async (event) => {
     if (event.length > 3) {
       const query = await searchMovie(event);
-      console.log({query: query})
-      setSearchValue(query.results)
+      console.log({ query: query });
+      setSearchValue(query.results);
     }
   };
 
@@ -42,10 +42,9 @@ const App = () => {
             <div className="menu">
               <ul>
                 <li>
-                  <a href="#">GENRE</a>
-                </li>
-                <li>
-                  <a href="#popular">POPULAR</a>
+                  <a href="#popular">
+                    POPULAR
+                  </a>
                 </li>
               </ul>
             </div>
@@ -55,7 +54,7 @@ const App = () => {
                 placeholder="Search..."
                 id="search_input"
                 autoComplete="off"
-                onChange={({target}) => handleInputChange(target.value)}
+                onChange={({ target }) => handleInputChange(target.value)}
               />
             </div>
             <div className="img_profile">
@@ -65,14 +64,16 @@ const App = () => {
             </div>
           </div>
         </div>
+        
         {/* <input 
         placeholder="cari film..." 
         className="movie-search"
         onChange={({target}) => search(target.value)} 
         /> */}
         <div className="type">
-          <h1 id="popular">POPULAR</h1>
-          <h3>see all</h3>
+          <h1 id="popular">
+            POPULAR
+          </h1>
         </div>
         <div className="movie-container">
           <PopularMovieList searchValue={searchValue} />
