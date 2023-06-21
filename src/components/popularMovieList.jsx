@@ -11,11 +11,11 @@ const PopularMovieList = ({ searchValue }) => {
   }, [searchValue]);
 
   const ListPopularMovie = () => {
-    return popularMovies.map((movie, i) => {
+    return popularMovies.map((movie) => {
       return (
         <div
           className="movie-wrapper"
-          key={i}
+          key={movie.id}
           style={{
             backgroundImage: `url(${process.env.REACT_APP_BASEIMGURL}/${movie.poster_path})`,
           }}>
