@@ -1,16 +1,22 @@
-const ListPopularMovie = (props) => {
+import React from "react";
+
+const PopularMovieList = ({popularMovies}) => {
   return (
-    <div
-      className="movie-wrapper"
-      key={props.type.id}
-      style={{backgroundImage: `url(${process.env.REACT_APP_BASEIMGURL}/${props.type.poster_path})`}}>
-      <div className="movie-content">
-        <div className="movie-title">{props.type.title}</div>
-        <div className="movie-date">release: {props.type.release_date}</div>
-        <div className="movie-rate">{props.type.vote_average}</div>
-      </div>
+    <div className="movie-container">
+        {popularMovies.map((movie) => (
+          <div
+            className="movie-wrapper"
+            key={movie.id}
+            style={{backgroundImage: `url(${process.env.REACT_APP_BASEIMGURL}/${movie.poster_path})`}}>
+            <div className="movie-content">
+              <div className="movie-title">{movie.title}</div>
+              <div className="movie-date">release: {movie.release_date}</div>
+              <div className="movie-rate">{movie.vote_average}</div>
+            </div>
+          </div>
+        ))}
     </div>
   );
 };
 
-export default ListPopularMovie;
+export default PopularMovieList;

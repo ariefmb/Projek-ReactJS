@@ -1,58 +1,40 @@
-// import MyPict from "../assets/profile/myPict.png";
-// import React, { useState } from "react";
-// import { searchMovie } from "../api";
+import React, { useState } from "react";
+import { searchMovie } from "../api";
+import MyPict from "../assets/profile/myPict.png"
 
-// const NavBar = ({ onInputChange }) => {
-//   const [inputValue, setInputValue] = useState([]);
+const NavBar = ({ OnSearch }) => {
+    const [query, setQUery] = useState("")
 
-//   // const handleInputChange = (event) => {
-//   //   console.log(event)
-//   //   setInputValue(event.result);
-//   //   onInputChange(event.result);
-//   // };
+    const handleSearch = async () => {
+        if(query.length > 3) {
+            const result = await searchMovie(query)
+            OnSearch(result.results)
+        }
+    }
 
-//   const search = async (q) => {
-//     if (q.length > 3) {
-//       const query = await searchMovie(q)
-//       console.log({query: query})
-//       // setInputValue(query.results)
-//       onInputChange(query.results)
-//     }
-//   }
+    return (
+        <div className="navigate">
+            <div className="nav-wrapper">
+              <div className="logo"><a href="/"><p>CINEMA</p></a></div>
+              <div className="menu">
+                <ul><li><a href="#popular">POPULAR</a></li></ul>
+              </div>
+              <div className="search">
+                <input 
+                type="text" 
+                placeholder="Search..." 
+                id="search_inputgakepake" 
+                autoComplete="off"
+                value={query}
+                onChange={({ target }) => setQUery(target.value)}
+                onBlur={handleSearch} />
+              </div>
+              <div className="img_profile">
+                  <img src={MyPict} alt="" />
+              </div>
+            </div>
+        </div>
+    )
+}
 
-//   return (
-//     <div className="nav-wrapper">
-//       <div className="logo">
-//         <a href="/">
-//           <p>CINEMA</p>
-//         </a>
-//       </div>
-//       <div className="menu">
-//         <ul>
-//           <li>
-//             <a href="#">GENRE</a>
-//           </li>
-//           <li>
-//             <a href="#popular">POPULAR</a>
-//           </li>
-//         </ul>
-//       </div>
-//       <div className="search">
-//         <input
-//           type="text"
-//           placeholder="Search..."
-//           id="search_input"
-//           // value={inputValue}
-//           onChange={({target}) => search(target.value)}
-//         />
-//       </div>
-//       <div className="img_profile">
-//         <a href="#">
-//           <img src={MyPict} alt="" />
-//         </a>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default NavBar;
+export default NavBar;
