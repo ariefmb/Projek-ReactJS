@@ -11,13 +11,8 @@ export const getMovieList = async () => {
 };
 
 export const searchMovie = async (q) => {
-  // const search = await axios.get(
-  //     `${baseUrl}/search/movie?query=${q}&page=1&api_key=${apiKey}`
-  // )
-  // return search.data
   const search = await axios.get(
     `${baseUrl}/search/movie?query=${q}&api_key=${apiKey}`
   );
-  console.log(q)
   return search.data;
 };
