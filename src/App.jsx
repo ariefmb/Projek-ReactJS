@@ -1,19 +1,33 @@
 import "./style/App.css";
 import { getMovieList, searchMovie } from "./api";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import ProfilePage from "./pages/profile";
 import PopularMovieList from "./components/popularMovieList";
 import MyPict from "./assets/profile/myPict.png";
 
 const App = () => {
-  const [searchValue, setSearchValue] = useState([]);
+  const [popularMovies, setPopularMovies] = useState([]);
+
+  useEffect(() => {
+    getMovieList().then((result) => {
+      setPopularMovies(result);
+    });
+  }, []);
+
+  const listPopularMovies = () => {
+    return popularMovies.map((movie) => {
+      return (
+        <PopularMovieList type={movie} />
+      )
+    })
+  }
 
   const search = async (q) => {
     if (q.length > 3) {
       const query = await searchMovie(q);
       console.log({ query: query });
-      setSearchValue(query.results);
+      setPopularMovies(query.results);
     }
   };
 
@@ -46,7 +60,7 @@ const App = () => {
         </div>
 
         <div className="movie-container">
-          <PopularMovieList searchValue={searchValue} />
+          <listPopularMovies />
         </div>
       </header>
 
