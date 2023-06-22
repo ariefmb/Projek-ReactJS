@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { searchMovie } from "../api";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import MyPict from "../assets/profile/myPict.png"
 
 const NavBar = ({ OnSearch }) => {
@@ -23,11 +25,12 @@ const NavBar = ({ OnSearch }) => {
                 <input 
                 type="text" 
                 placeholder="Search..." 
-                id="search_inputgakepake" 
+                className="input-with-icon" 
                 autoComplete="off"
                 value={query}
                 onChange={({ target }) => setQUery(target.value)}
                 onBlur={handleSearch} />
+                <FontAwesomeIcon icon={faSearch} className="input-icon"/>
               </div>
               <div className="img_profile">
                   <img src={MyPict} alt="" />
