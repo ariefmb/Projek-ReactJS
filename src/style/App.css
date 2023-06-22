@@ -179,13 +179,13 @@
   color: black;
   background-size: cover;
   background-position: center;
+  transition: 0.3s;
 }
 
 .movie-wrapper:hover{
   z-index: 0;
   height: 385px;
   width: 230px;
-  transition: 0.3s;
 }
 
 .movie-content {
@@ -202,6 +202,7 @@
 
 .movie-content:hover{
   z-index: 0;
+  border: 2px white solid;
   align-items: center;
   justify-content: center;
   z-index: 9999;

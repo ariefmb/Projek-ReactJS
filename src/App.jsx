@@ -2,7 +2,7 @@ import "./style/App.css";
 import { getMovieList, searchMovie } from "./api";
 import React, { useEffect, useState } from "react";
 import ProfilePage from "./pages/profile";
-import PopularMovieList from "./components/popularMovieList";
+import ListPopularMovie from "./components/popularMovieList";
 import MyPict from "./assets/profile/myPict.png";
 
 const App = () => {
@@ -14,13 +14,13 @@ const App = () => {
     });
   }, []);
 
-  const ListPopularMovies = () => {
+  const PopularMovieList = () => {
     return popularMovies.map((movie) => {
       return (
-        <PopularMovieList type={movie} />
-      )
-    })
-  }
+        <ListPopularMovie type={movie} />
+      );
+    });
+  };
 
   const search = async (q) => {
     if (q.length > 3) {
@@ -38,15 +38,15 @@ const App = () => {
           <div className="nav-wrapper">
             <div className="logo"><a href="/"><p>CINEMA</p></a></div>
             <div className="menu">
-              <ul>
-                <li><a href="#popular">POPULAR</a></li>
-              </ul>
+              <ul><li><a href="#popular">POPULAR</a></li></ul>
             </div>
             <div className="search">
               <input type="text" placeholder="Search..." id="search_input" autoComplete="off"
               onChange={({ target }) => search(target.value)} />
             </div>
-            <div className="img_profile"><a href={<ProfilePage />} target="_blank"><img src={MyPict} alt="" /></a></div>
+            <div className="img_profile">
+              <a href={<ProfilePage />} target="_blank"><img src={MyPict} alt="" /></a>
+            </div>
           </div>
         </div>
 
@@ -55,7 +55,7 @@ const App = () => {
         </div>
 
         <div className="movie-container">
-          <ListPopularMovies />
+          <PopularMovieList />
         </div>
       </header>
 
