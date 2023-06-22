@@ -117,12 +117,8 @@
   color: white;
 }
 
-.img_profile {
+.img_profile img {
   margin-right: 10px;
-  cursor: pointer;
-}
-
-.img_profile a img {
   display: flex;
   border-radius: 50%;
   border: 4px solid #1f1f1f;
@@ -130,9 +126,9 @@
   height: auto;
 }
 
-.img_profile a img:hover {
+.img_profile img:hover {
   border: 4px solid #8731c5;
-  transition: 0.2s linear;
+  transition: 0.2s;
 }
 
 .movie-search {

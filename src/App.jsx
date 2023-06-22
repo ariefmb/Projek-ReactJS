@@ -1,6 +1,7 @@
 import "./style/App.css";
 import { getMovieList, searchMovie } from "./api";
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProfilePage from "./pages/profile";
 import ListPopularMovie from "./components/popularMovieList";
 import MyPict from "./assets/profile/myPict.png";
@@ -33,21 +34,27 @@ const App = () => {
     <div className="App">
       <header className="App-header">
 
-        <div className="navigate">
-          <div className="nav-wrapper">
-            <div className="logo"><a href="/"><p>CINEMA</p></a></div>
-            <div className="menu">
-              <ul><li><a href="#popular">POPULAR</a></li></ul>
-            </div>
-            <div className="search">
-              <input type="text" placeholder="Search..." id="search_input" autoComplete="off"
-              onChange={({ target }) => search(target.value)} />
-            </div>
-            <div className="img_profile">
-              <a href={<ProfilePage />} target="_blank"><img src={MyPict} alt="" /></a>
+        <Router>
+          <div className="navigate">
+            <div className="nav-wrapper">
+              <div className="logo"><a href="/"><p>CINEMA</p></a></div>
+              <div className="menu">
+                <ul><li><a href="#popular">POPULAR</a></li></ul>
+              </div>
+              <div className="search">
+                <input type="text" placeholder="Search..." id="search_input" autoComplete="off"
+                onChange={({ target }) => search(target.value)} />
+              </div>
+              <div className="img_profile">
+                <Switch>
+                  <img src={MyPict} alt="" />
+                  <Route path="/profile">
+                  </Route>
+                </Switch>
+              </div>
             </div>
           </div>
-        </div>
+        </Router>
 
         <div className="type">
           <h1 id="popular">POPULAR</h1>
