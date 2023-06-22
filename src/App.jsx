@@ -1,7 +1,6 @@
 import "./style/App.css";
 import { getMovieList, searchMovie } from "./api";
 import React, { useEffect, useState } from "react";
-import { useRef } from "react";
 import ProfilePage from "./pages/profile";
 import PopularMovieList from "./components/popularMovieList";
 import MyPict from "./assets/profile/myPict.png";
@@ -15,7 +14,7 @@ const App = () => {
     });
   }, []);
 
-  const listPopularMovies = () => {
+  const ListPopularMovies = () => {
     return popularMovies.map((movie) => {
       return (
         <PopularMovieList type={movie} />
@@ -37,9 +36,7 @@ const App = () => {
 
         <div className="navigate">
           <div className="nav-wrapper">
-            <div className="logo">
-              <a href="/"><p>CINEMA</p></a>
-            </div>
+            <div className="logo"><a href="/"><p>CINEMA</p></a></div>
             <div className="menu">
               <ul>
                 <li><a href="#popular">POPULAR</a></li>
@@ -49,9 +46,7 @@ const App = () => {
               <input type="text" placeholder="Search..." id="search_input" autoComplete="off"
               onChange={({ target }) => search(target.value)} />
             </div>
-            <div className="img_profile">
-              <a href={<ProfilePage />} target="_blank"><img src={MyPict} alt="" /></a>
-            </div>
+            <div className="img_profile"><a href={<ProfilePage />} target="_blank"><img src={MyPict} alt="" /></a></div>
           </div>
         </div>
 
@@ -60,7 +55,7 @@ const App = () => {
         </div>
 
         <div className="movie-container">
-          <listPopularMovies />
+          <ListPopularMovies />
         </div>
       </header>
 
