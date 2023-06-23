@@ -11,6 +11,9 @@ export default function ProfilePage() {
     <div className="Profile">
       <header className="Profile-header">
         <nav className="Nav-profile">
+          <Link to="/">
+            <button>Back to Main</button>
+          </Link>
           <h1>PROFILE PAGE</h1>
         </nav>
 
@@ -60,10 +63,6 @@ export default function ProfilePage() {
             </div>
           </div>
         </div>
-
-        <Link to="/">
-          <button>Back to Main</button>
-        </Link>
       </header>
 
       <footer className="Profile-footer">
