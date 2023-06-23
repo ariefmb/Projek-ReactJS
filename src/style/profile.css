@@ -5,62 +5,181 @@
 }
 
 .Nav-profile {
-    width: 100%;
-    max-height: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 0px;
-    gap: 20px;
+  width: 100%;
+  height: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0px;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  border: 1px black solid;
+}
+
+.arrow {
+  color: blue;
+  margin-right: 350px;
+  font-size: 40px;
+}
+
+.Nav-profile h1 {
+  font-size: 30px;
+  margin-right: 600px;
 }
 
 .Profile-content {
-    padding: 20px;
-    border: 1px black solid;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  gap: 20px;
+  padding: 20px;
+  border: 1px black solid;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .left-content {
-    align-items: flex-start;
-    justify-content:flex-start;
-    padding: 10px;
-    border: 1px black solid;
+  width: 30%;
+  padding: 20px 40px;
+  border: 1px black solid;
 }
 
-.sosmed ul li {
-    text-align: left;
+.img-profile {
+  padding: 40px 0px;
+  border: 1px black solid;
+  align-items: center;
+  justify-items: center;
+}
+
+.img-profile img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  border: 8px #1f1f1f solid;
+  margin-left: 20%;
+  margin-bottom: 10px;
+}
+
+.img-profile img:hover {
+  border: 8px solid #8731c5;
+  transition: 0.3s;
+}
+
+.img-profile h1 {
+  cursor: default;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 2px;
+  font-size: 40px;
+}
+
+.sosmed ul {
+  border: 1px black solid;
 }
 
 .sosmed ul li a {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-weight: bold;
-    color: green;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: green;
 }
 
 .sosmed ul li a img {
-    margin: 5px;
-    max-width: 40px;
-    height: auto;
+  border-radius: 50%;
+  margin: 5px;
+  max-width: 30px;
+  height: auto;
+}
+
+.right-content {
+  width: 60%;
+  border: 1px black solid;
+  padding: 20px 40px;
 }
 
 .bio-card {
-    border: 1px black solid;
-    margin: 10px 0px;
-    padding: 10px 5px;
+  border: 1px green solid;
+  margin: 10px 0px;
+  padding: 30px 20px;
+}
+
+.bio-card h2 {
+  margin-bottom: 10px;
 }
 
 .bio-card input {
-    padding: 0px 10px;
+  width: 95%;
+  height: 35px;
+  padding: 2px 10px;
+  outline: none;
+  color: #555555;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+#born {
+  width: 30%;
+}
+
+.bio-card textarea {
+  color: black;
+  font-size: 15px;
+  outline: none;
+  padding: 10px;
+  font-weight: 550;
+}
+
+.bio-card textarea::placeholder {
+  font-size: 15px;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 30px;
+}
+
+#submit-btn {
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#cancel-btn {
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px;
+  gap: 30px;
+}
+
+#logout-btn {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 10px;
+  width: 120px;
+  height: 50px;
 }
 
 .Profile-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(90deg, rgb(20, 73, 71), rgb(0, 34, 128));
   color: white;
   padding: 10px;
+  height: 40px;
+  gap: 8px;
 }
 
 .Profile-footer b {
