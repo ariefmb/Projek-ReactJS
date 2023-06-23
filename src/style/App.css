@@ -215,7 +215,7 @@
 }
 
 .movie-title {
-  text-align: left;
+  vertical-align: text-bottom;
   font-size: 75%;
   font-weight: bold;
   width: 100%;

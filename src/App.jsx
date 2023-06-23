@@ -25,9 +25,7 @@ const App = () => {
 
         <NavBar OnSearch={handleSearch}/>
 
-        <div className="type">
-          <h1 id="popular">POPULAR</h1>
-        </div>
+        
 
         <PopularMovieList popularMovies={popularMovies} />
       </header>
