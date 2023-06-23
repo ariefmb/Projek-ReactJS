@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { searchMovie } from "../api";
+import { searchMovie } from "../../api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import MyPict from "../assets/profile/myPict.png"
-import ProfilePage from "../pages/profile";
+import MyPict from "../../assets/profile/myPict.jpg"
 
 const NavBar = ({ OnSearch }) => {
     const [query, setQUery] = useState("")

@@ -1,0 +1,44 @@
+.notfound {
+  margin: 10% 10%;
+  margin-left: 600px;
+}
+
+.notfound h1 {
+  font-size: 80px;
+}
+
+.notfound h2 {
+  font-size: 50px;
+}
+
+.back {
+  padding: 10px;
+  margin-left: 50px;
+  gap: 10px;
+}
+
+#main {
+  font-weight: bold;
+  width: 80px;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+#main:hover {
+  box-shadow: 0px 2px 5px black;
+}
+
+#profile {
+  font-weight: bold;
+  width: 80px;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+#profile:hover {
+  box-shadow: 0px 2px 5px black;
+}

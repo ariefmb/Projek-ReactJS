@@ -1,6 +1,6 @@
 * {
   /* border: 1px solid black; */
-  font-family: 'comic sans ms';
+  font-family: "comic sans ms";
   text-decoration: none;
   list-style-type: none;
   margin: 0px;
@@ -186,7 +186,7 @@
   background-position: center;
 }
 
-.movie-wrapper:hover{
+.movie-wrapper:hover {
   transition: 0.3s;
   z-index: 0;
   height: 385px;
@@ -204,7 +204,7 @@
   text-align: left;
 }
 
-.movie-content:hover{
+.movie-content:hover {
   transition: 0.2s;
   padding-top: 240px;
   border: 2px white solid;
@@ -249,7 +249,7 @@
   .Main {
     max-width: 91%;
   }
-  
+
   .navigate {
     max-width: 100%;
     height: auto;
@@ -260,7 +260,7 @@
     top: 0;
     z-index: 1;
   }
-  
+
   .nav-wrapper {
     max-width: 100%;
     margin: 20px;
@@ -273,7 +273,6 @@
 
   .logo a {
     font-size: 25px;
-    
   }
   .movie-container {
     gap: 10px;

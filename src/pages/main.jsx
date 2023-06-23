@@ -1,8 +1,8 @@
 import "../style/main.css";
 import { getMovieList } from "../api";
 import React, { useEffect, useState } from "react";
-import PopularMovieList from "../components/popularMovieList";
-import NavBar from "../components/navBar";
+import PopularMovieList from "../components/mainComp/popularMovieList";
+import NavBar from "../components/mainComp/navBar";
 
 const MainPage = () => {
   const [popularMovies, setPopularMovies] = useState([]);
