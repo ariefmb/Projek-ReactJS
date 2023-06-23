@@ -1,5 +1,5 @@
 import "./style/App.css";
-import { getMovieList, searchMovie } from "./api";
+import { getMovieList } from "./api";
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PopularMovieList from "./components/popularMovieList";
@@ -35,6 +35,7 @@ const App = () => {
       <footer className="App-footer">
         &copy;2023. <b>Arief Budiman</b>
       </footer>
+
     </div>
   );
 };
