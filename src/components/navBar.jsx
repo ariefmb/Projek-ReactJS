@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { searchMovie } from "../api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import MyPict from "../assets/profile/myPict.png"
+import ProfilePage from "../pages/profile";
 
 const NavBar = ({ OnSearch }) => {
     const [query, setQUery] = useState("")
@@ -33,7 +35,7 @@ const NavBar = ({ OnSearch }) => {
                 <FontAwesomeIcon icon={faSearch} className="input-icon"/>
               </div>
               <div className="img_profile">
-                  <img src={MyPict} alt="" />
+                  <Link to="/profile"><img src={MyPict} alt="profile" /></Link>
               </div>
             </div>
         </div>

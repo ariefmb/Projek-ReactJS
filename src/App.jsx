@@ -8,8 +8,12 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route exact path="/" >
+          <MainPage />
+        </Route>
+        <Route exact path="/profile" >
+          <ProfilePage />
+        </Route>
       </Switch>
     </Router>
   );

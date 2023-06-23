@@ -1,3 +1,4 @@
+import "../style/main.css";
 import { getMovieList } from "../api";
 import React, { useEffect, useState } from "react";
 import PopularMovieList from "../components/popularMovieList";
@@ -17,13 +18,13 @@ const MainPage = () => {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="Main">
+      <header className="Main-header">
         <NavBar OnSearch={handleSearch}/>
         <PopularMovieList popularMovies={popularMovies} />
       </header>
 
-      <footer className="App-footer">
+      <footer className="Main-footer">
         &copy;2023. <b>Arief Budiman</b>
       </footer>
 
