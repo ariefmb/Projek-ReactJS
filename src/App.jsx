@@ -1,40 +1,17 @@
 import "./style/App.css";
-import { getMovieList } from "./api";
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import PopularMovieList from "./components/popularMovieList";
-import NavBar from "./components/navBar";
+import React from "react";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import ProfilePage from "./pages/profile";
+import MainPage from "./pages/main";
 
 const App = () => {
-  const [popularMovies, setPopularMovies] = useState([]);
-
-  useEffect(() => {
-    getMovieList().then((result) => {
-      setPopularMovies(result);
-    });
-  }, []);
-
-  const handleSearch = (result) => {
-    setPopularMovies(result)
-  }
-
   return (
-    <div className="App">
-      <header className="App-header">
-
-        <NavBar OnSearch={handleSearch}/>
-
-        
-
-        <PopularMovieList popularMovies={popularMovies} />
-      </header>
-
-      <footer className="App-footer">
-        &copy;2023. <b>Arief Budiman</b>
-      </footer>
-
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+      </Switch>
+    </Router>
   );
 };
 
