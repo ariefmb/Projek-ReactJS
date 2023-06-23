@@ -14,19 +14,19 @@ const LeftComp = () => {
       <div className="sosmed">
         <ul>
           <li>
-            <a href="https://instagram.com/ariefmuh._" target="_blank">
+            <a href="https://instagram.com/ariefmuh._" target="_blank" rel="noreferrer">
               <img src={instagram} alt="" />
               <h3>ariefmuh._</h3>
             </a>
           </li>
           <li>
-            <a href=<NotFound /> target="_blank">
+            <a href={<NotFound />}>
               <img src={whatsapp} alt="" />
               <h3>0856xxxx</h3>
             </a>
           </li>
           <li>
-            <a href="https://github.com/ariefmb" target="_blank">
+            <a href="https://github.com/ariefmb" target="_blank" rel="noreferrer">
               <img src={github} alt="" />
               <h3>ariefmb</h3>
             </a>
